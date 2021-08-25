@@ -128,7 +128,7 @@ async function handler(event, context) {
       throw new Error("Incorrect API usage. Expects one of: /:url/ or /:url/:size/ or /:url/:size/:aspectratio/")
     }
 
-    let output = await screenshot(url, format, viewport, dpr);
+    let output = await screenshot(encodeURIComponent(url), format, viewport, dpr);
 
     // output to Function logs
     console.log(url, format, { viewport }, { size }, { dpr }, { aspectratio });
