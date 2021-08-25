@@ -38,7 +38,7 @@ async function screenshot(url, format, viewportSize, dpr = 1, withJs = true) {
   // TODO handle 404/500 status codes better
 
   let options = {
-    type: format,
+      fullPage: true,
     encoding: "base64"
   };
 
