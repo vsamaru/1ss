@@ -18,7 +18,7 @@ async function screenshot(url, format, viewportSize, dpr = 1, withJs = true) {
     defaultViewport: {
       width: viewportSize[0],
       height: viewportSize[1],
-      deviceScaleFactor: parseFloat(dpr),
+      deviceScaleFactor: 2,
     },
     headless: chromium.headless,
   });
@@ -42,9 +42,9 @@ async function screenshot(url, format, viewportSize, dpr = 1, withJs = true) {
     encoding: "base64"
   };
 
-  if(format === "jpeg") {
-    options.quality = 80;
-  }
+//   if(format === "jpeg") {
+//     options.quality = 80;
+//   }
 
   let output = await page.screenshot(options);
 
